@@ -123,26 +123,5 @@ app.get('/api/turtles', (req, res) => {
   res.json(turtles);
 });
 
-app.get('/api/questions', (req, res) => {
-  res.json(questions);
-});
-
-// Añadir pregunta (útil para editor en frontend)
-app.post('/api/questions', (req, res) => {
-  const q = req.body;
-  if (!q || !q.question || !Array.isArray(q.options) || q.options.length < 2 || !q.turtleId) {
-    return res.status(400).json({ error: 'Payload inválido; requiere question, options (array) y turtleId' });
-  }
-  q.id = Date.now();
-  questions.push(q);
-  res.status(201).json(q);
-});
-
-// Borrar preguntas (desarrollo)
-app.delete('/api/questions', (req, res) => {
-  questions = [];
-  res.json({ ok: true });
-});
-
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Backend escuchando en http://localhost:${port}`));
