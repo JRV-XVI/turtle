@@ -12,7 +12,7 @@
 
     <main class="home">
       <section class="hero">
-        <h2 class="hero-title">Concientización sobre la caza furtiva de tortugas en México</h2>
+        <h2 class="hero-title">Concientización sobre la caza furtiva de las 7 especies de tortugas en México</h2>
       </section>
 
       <section class="quiz-section">
